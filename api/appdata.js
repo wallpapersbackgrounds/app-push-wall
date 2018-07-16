@@ -6,9 +6,9 @@ var multer = require('multer');
 var fs = require('fs');
 var cloudinary = require('cloudinary');
 cloudinary.config({
-  cloud_name: 'sofittech',
-  api_key: '479195199828816',
-  api_secret: 'mEIgYJ6yKGWRRNCM849CIv2g4dA'
+  cloud_name: 'djeloeuzk',
+  api_key: '624546674361513',
+  api_secret: 'zV8Utj7GFX14bu2yZ6PKFaobiTA'
 });
 
 var storage = multer.diskStorage({
@@ -528,7 +528,7 @@ exports.home = function(req,res){
               app:done,
               other:result,
               banner:found,
-              message: "Welecome to SOFIT App Services!"
+              message: "Welecome to Logical Solutions App Services!"
             });
           }
         })
