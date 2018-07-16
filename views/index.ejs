@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SOFIT App Services</title>
+	<link href="./static/css/style.css" rel='stylesheet' type='text/css'/>
+		<link href="//fonts.googleapis.com/css?family=Ropa+Sans:400,400i&amp;subset=latin-ext" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Simple Tab Forms Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+	<script src="./static/js/jquery.min.js"></script>
+				<script type="text/javascript">
+					$(document).ready(function () {
+						$('#horizontalTab').easyResponsiveTabs({
+							type: 'default', //Types: default, vertical, accordion
+							width: 'auto', //auto or any width like 600px
+							fit: true   // 100% fit in a container
+						});
+					});
+				</script>
+
+
+</head>
+<body onload="myFunction()">
+	<h1>SOFIT App Services</h1>
+	
+	<div id="snackbar"><%=message%></div>
+	<div class="main-content">
+
+        <div class="right-w3">
+			<div class="sap_tabs">
+				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+					<ul>
+						<li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Add</span></li>
+						<li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Notification</span></li>
+						<li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Other</span></li>
+						<li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Remove</span></li>
+						<li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Banner</span></li>
+						<li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Icon</span></li>
+				    <div class="clear"></div>
+					</ul>
+					<div class="agile-tb">
+						<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+							<form  type="Submit" method="post" action="/addByPortal">
+								<input placeholder="App Title" id="title" name="title" type="text" required="">
+								<input placeholder="Message" id ="message" name="message" type="text" required="">
+								<input placeholder="Package Name" id="package" name="package" type="text" required="">
+								<input placeholder="Image URL" id="imageUrl" name="imageUrl" type="text" required="">
+								<input type="submit" value="Submit"/>
+							</form>
+						</div>
+						<div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
+
+							<form method="post" type="submit" action="/addNotification" >
+								<label  for="NotificationType">Type</label>
+								</br>
+								</br>
+								<select name="notificationType" id="notificationType" class="mail">
+
+												<option value="Notification" >Notification</option>
+												<option value="Banner" >Banner</option>
+
+										</select>
+									</br>
+									</br>
+										<label  for="package">Notification/Banner</label>
+								<select name="package" id="package" class="mail">
+									<%var y=app;%>
+									<%for(var i=0 ; i<y.length;i++){%>
+												<option value=<%=y[i].package%> ><%=y[i].package%></option>
+											<%  }%>
+										</select>
+								<input type="submit" value="Submit"/>
+							</form>
+						 </div>
+						 <div class="tab-4 resp-tab-content" aria-labelledby="tab_item-3">
+							<form action="/addOtherNotification" type="submit" method="post">
+								<select id = "pkg1" name = "pkg1" class="mail">
+									<%var y=app;%>
+									<%for(var i=0 ; i<y.length;i++){%>
+										<%if(other.length>0){%>
+										<%if(y[i].package ==other[0].package){%>
+											<option value=<%=y[i].package%> selected><%=y[i].package%></option>
+										<%}else{%>
+											<option value=<%=y[i].package%> ><%=y[i].package%></option>
+										<%}}else{%>
+												<option value=<%=y[i].package%> ><%=y[i].package%></option>
+											<%  }}%>
+										</select>
+										<select id = "pkg2" name = "pkg2" class="mail">
+											<%var y=app;%>
+											<%for(var i=0 ; i<y.length;i++){%>
+												<%if(other.length>1){%>
+												<%if(y[i].package == other[1].package){%>
+													<option value=<%=y[i].package%> selected><%=y[i].package%></option>
+												<%}}else{%>
+														<option value=<%=y[i].package%> ><%=y[i].package%></option>
+													<%  }}%>
+												</select>
+												<select id = "pkg3" name = "pkg3" class="mail">
+													<%var y=app;%>
+													<%for(var i=0 ; i<y.length;i++){%>
+														<%if(other.length>2){%>
+														<%if(y[i].package == other[2].package){%>
+															<option value=<%=y[i].package%> selected><%=y[i].package%></option>
+														<%}}else{%>
+																<option value=<%=y[i].package%> ><%=y[i].package%></option>
+															<%  }}%>
+														</select>
+														<select id = "pkg4" name = "pkg4" class="mail">
+															<%var y=app;%>
+															<%for(var i=0 ; i<y.length;i++){%>
+																<%if(other.length>3){%>
+																<%if(y[i].package == other[3].package){%>
+																	<option value=<%=y[i].package%> selected><%=y[i].package%></option>
+																<%}}else{%>
+																		<option value=<%=y[i].package%> ><%=y[i].package%></option>
+																	<%  }}%>
+																</select>
+
+								<input type="submit" value="Send"/>
+							</form>
+						 </div>
+						 <div class="tab-4 resp-tab-content" aria-labelledby="tab_item-3">
+
+								<button  style="height: 30px" onclick="/removeNotification">Remove Notification</button>
+								<button style="height: 30px" onclick="/removeBanner">Remove Banner</button>
+								<button style="height: 30px" onclick="/removeOther">Remove Other</button>
+
+						 </div>
+						 <div class="tab-4 resp-tab-content" aria-labelledby="tab_item-3">
+							<form action="/addBanner" enctype="multipart/form-data" method="post">
+								<select id = "packagename" name = "packagename" class="mail">
+									<%var y=app;%>
+									<%if(y.length>0){%>
+										<%for(var i=0 ; i<y.length;i++){%>
+													<option value=<%=y[i].package%> ><%=y[i].package%></option>
+												<%  }%>
+									<%}else{%>
+											<option value=" " >No Apps Found</option>
+									<%}%>
+
+										</select>
+
+										<%if(y.length>0){%>
+											<input  name="userFile" id="userFile" type="file" required="">
+										<%}else{%>
+											<input  name="userFile" id="userFile" type="file" disabled required="">
+										<%}%>
+
+								<input type="submit" value="Send"/>
+							</form>
+						 </div>
+						 <div class="tab-4 resp-tab-content" aria-labelledby="tab_item-3">
+							<form action="/updateIconBanner" enctype="multipart/form-data" type="submit" method="post">
+								<select id = "packagename" name = "packagename" class="mail">
+									<%var y=app;%>
+									<%if(y.length>0){%>
+										<%for(var i=0 ; i<y.length;i++){%>
+													<option value=<%=y[i].package%> ><%=y[i].package%></option>
+												<%  }%>
+									<%}else{%>
+											<option value=" "> >No Apps Found</option>
+									<%}%>
+
+										</select>
+								<%if(y.length>0){%>
+									<input  name="userFile" id="userFile" type="file" required="">
+								<%}else{%>
+									<input  name="userFile" id="userFile" type="file" disabled required="">
+								<%}%>
+
+
+
+								<input type="submit" value="Send"/>
+							</form>
+						 </div>
+
+					 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<p> &copy; 2018 <a href="https://web.sofittech.com">SOFIT</a></p>
+	</div>
+	<script src="./static/js/easyResponsiveTabs.js" type="text/javascript"></script>
+	<script>
+function myFunction() {
+    var x = document.getElementById("snackbar")
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+</body>
+</html>

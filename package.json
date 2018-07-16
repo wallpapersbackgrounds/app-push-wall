@@ -1,0 +1,25 @@
+{
+  "name": "azurenotification",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "sheeraz",
+  "license": "ISC",
+  "dependencies": {
+    "applicationinsights": "^1.0.0",
+    "azure": "^2.0.0-preview",
+    "azure-sb": "^0.10.4",
+    "body-parser": "^1.17.2",
+    "cloudinary": "^1.9.1",
+    "ejs": "^2.5.7",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "mongoose": "^4.10.5",
+    "multer": "^1.3.0",
+    "path": "^0.12.7"
+  }
+}
